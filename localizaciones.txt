@@ -1,0 +1,7 @@
+.zshrc => /home/roni
+.profile => /home/roni
+init.vim => /home/roni/.config/nvim
+xmonad.hs => /home/roni/.xmonad
+kitty.conf => /home/roni/.config/kitty
+lightdm.conf => /etc/lightdm
+nitrogen.cfg => /home/roni/.config/nitrogen
