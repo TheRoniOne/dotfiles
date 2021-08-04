@@ -109,10 +109,10 @@ setopt GLOB_DOTS
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make nano the default editor
+# Make nvim the default editor
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='/usr/bin/nvim'
+export VISUAL='/usr/bin/nvim'
 
 #PS1='[\u@\h \W]\$ '
 
