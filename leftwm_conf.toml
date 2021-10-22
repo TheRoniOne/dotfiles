@@ -14,9 +14,9 @@ focus_new_windows = true
 
 [[keybind]]
 command = "Execute"
-value = "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'"
+value = "rofi -show combi -show-icons"
 modifier = ["modkey","Shift"]
-key = "d"
+key = "s"
 
 [[keybind]]
 command = "Execute"
