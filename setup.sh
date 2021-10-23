@@ -34,3 +34,6 @@ ln -s init.lua $HOME/.config/nvim/init.lua
 # Enable services
 echo enabling lightdm at startup
 systemctl enable lightdm
+
+# Install extras
+paru -S exa bat ripgrep fd procs
