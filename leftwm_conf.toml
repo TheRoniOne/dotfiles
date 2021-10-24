@@ -32,7 +32,7 @@ key = "f"
 
 [[keybind]]
 command = "Execute"
-value = "kitty"
+value = "alacritty"
 modifier = ["modkey"]
 key = "Return"
 
