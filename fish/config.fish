@@ -11,8 +11,8 @@ set -x MANPAGER "nvim -c 'set ft=man' -"
 
 # Aliases
 alias icat "kitty +kitten icat"
-alias ls="exa -al --color=always --group-directories-first"
-alias ls -la "exa -a --color=always --group-directories-first"
+alias ls "exa -al --color=always --group-directories-first"
+alias la "exa -a --color=always --group-directories-first"  # all files and dirs
 
 # Evals
 eval (keychain --eval --agents ssh -Q --quiet $HOME/.ssh/github-arcovm)
