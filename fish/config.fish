@@ -3,7 +3,7 @@ if status is-interactive
 end
 
 # ENV vars
-set EDITOR "nvim"
+set EDITOR "helix"
 # set TERM "alacritty"
 set -x MANPAGER "nvim -c 'set ft=man' -"
 
