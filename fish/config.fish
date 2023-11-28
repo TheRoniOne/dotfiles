@@ -15,7 +15,7 @@ starship init fish | source
 pyenv init - | source
 
 # pnpm
-set -gx PNPM_HOME "/home/roni/.local/share/pnpm"
+set -gx PNPM_HOME "/home/ronald/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
