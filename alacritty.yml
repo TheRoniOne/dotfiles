@@ -15,13 +15,13 @@
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 #env:
-  # TERM variable
-  #
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+# TERM variable
+#
+# This value is used to set the `$TERM` environment variable for
+# each instance of Alacritty. If it is not present, alacritty will
+# check the local terminfo database and use `alacritty` if it is
+# available, otherwise `xterm-256color` is used.
+#TERM: alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -111,7 +111,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Source Code Pro
+    family: FiraCode Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -122,7 +122,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Source Code Pro
+    family: FiraCode Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -133,7 +133,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Source Code Pro
+    family: FiraCode Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -144,7 +144,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Source Code Pro
+    family: FiraCode Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
@@ -178,36 +178,36 @@ draw_bold_text_with_bright_colors: true
 schemes:
   SeaShells: &SeaShells
     primary:
-      background: '#061923'
-      foreground: '#e5c49e'
+      background: "#061923"
+      foreground: "#e5c49e"
 
     cursor:
-      text: '#061822'
-      cursor: '#feaf3c'
+      text: "#061822"
+      cursor: "#feaf3c"
 
     selection:
-      text: '#ffe9d7'
-      background: '#265b75'
+      text: "#ffe9d7"
+      background: "#265b75"
 
     normal:
-      black: '#1d485f'
-      red: '#db662d'
-      green: '#008eab'
-      yellow: '#feaf3c'
-      blue: '#255a62'
-      magenta: '#77dbf4'
-      cyan: '#5fb1c2'
-      white: '#e5c49e'
+      black: "#1d485f"
+      red: "#db662d"
+      green: "#008eab"
+      yellow: "#feaf3c"
+      blue: "#255a62"
+      magenta: "#77dbf4"
+      cyan: "#5fb1c2"
+      white: "#e5c49e"
 
     bright:
-      black: '#545d65'
-      red: '#dd998a'
-      green: '#739da8'
-      yellow: '#fedaae'
-      blue: '#0bc7e3'
-      magenta: '#c6e8f1'
-      cyan: '#97b9c0'
-      white: '#ffe9d7'
+      black: "#545d65"
+      red: "#dd998a"
+      green: "#739da8"
+      yellow: "#fedaae"
+      blue: "#0bc7e3"
+      magenta: "#c6e8f1"
+      cyan: "#97b9c0"
+      white: "#ffe9d7"
 
   # Colors (ArcoLinux)
 colors: *SeaShells
@@ -216,42 +216,42 @@ colors: *SeaShells
 #
 # The bell is rung every time the BEL control character is received.
 #bell:
-  # Visual Bell Animation
-  #
-  # Animation effect for flashing the screen when the visual bell is rung.
-  #
-  # Values for `animation`:
-  #   - Ease
-  #   - EaseOut
-  #   - EaseOutSine
-  #   - EaseOutQuad
-  #   - EaseOutCubic
-  #   - EaseOutQuart
-  #   - EaseOutQuint
-  #   - EaseOutExpo
-  #   - EaseOutCirc
-  #   - Linear
-  #animation: EaseOutExpo
+# Visual Bell Animation
+#
+# Animation effect for flashing the screen when the visual bell is rung.
+#
+# Values for `animation`:
+#   - Ease
+#   - EaseOut
+#   - EaseOutSine
+#   - EaseOutQuad
+#   - EaseOutCubic
+#   - EaseOutQuart
+#   - EaseOutQuint
+#   - EaseOutExpo
+#   - EaseOutCirc
+#   - Linear
+#animation: EaseOutExpo
 
-  # Duration of the visual bell flash in milliseconds. A `duration` of `0` will
-  # disable the visual bell animation.
-  #duration: 0
+# Duration of the visual bell flash in milliseconds. A `duration` of `0` will
+# disable the visual bell animation.
+#duration: 0
 
-  # Visual bell animation color.
-  #color: '#ffffff'
+# Visual bell animation color.
+#color: '#ffffff'
 
-  # Bell Command
-  #
-  # This program is executed whenever the bell is rung.
-  #
-  # When set to `command: None`, no command will be executed.
-  #
-  # Example:
-  #   command:
-  #     program: notify-send
-  #     args: ["Hello, World!"]
-  #
-  #command: None
+# Bell Command
+#
+# This program is executed whenever the bell is rung.
+#
+# When set to `command: None`, no command will be executed.
+#
+# Example:
+#   command:
+#     program: notify-send
+#     args: ["Hello, World!"]
+#
+#command: None
 
 # Background opacity
 #
@@ -260,51 +260,51 @@ colors: *SeaShells
 background_opacity: 1.0
 
 #selection:
-  # This string contains all characters that are used as separators for
-  # "semantic words" in Alacritty.
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+# This string contains all characters that are used as separators for
+# "semantic words" in Alacritty.
+#semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
-  # When set to `true`, selected text will be copied to the primary clipboard.
-  #save_to_clipboard: false
+# When set to `true`, selected text will be copied to the primary clipboard.
+#save_to_clipboard: false
 
 #cursor:
-  # Cursor style
-  #style:
-    # Cursor shape
-    #
-    # Values for `shape`:
-    #   - ▇ Block
-    #   - _ Underline
-    #   - | Beam
-    #shape: Block
+# Cursor style
+#style:
+# Cursor shape
+#
+# Values for `shape`:
+#   - ▇ Block
+#   - _ Underline
+#   - | Beam
+#shape: Block
 
-    # Cursor blinking state
-    #
-    # Values for `blinking`:
-    #   - Never: Prevent the cursor from ever blinking
-    #   - Off: Disable blinking by default
-    #   - On: Enable blinking by default
-    #   - Always: Force the cursor to always blink
-    #blinking: Off
+# Cursor blinking state
+#
+# Values for `blinking`:
+#   - Never: Prevent the cursor from ever blinking
+#   - Off: Disable blinking by default
+#   - On: Enable blinking by default
+#   - Always: Force the cursor to always blink
+#blinking: Off
 
-  # Vi mode cursor style
-  #
-  # If the vi mode cursor style is `None` or not specified, it will fall back to
-  # the style of the active value of the normal cursor.
-  #
-  # See `cursor.style` for available options.
-  #vi_mode_style: None
+# Vi mode cursor style
+#
+# If the vi mode cursor style is `None` or not specified, it will fall back to
+# the style of the active value of the normal cursor.
+#
+# See `cursor.style` for available options.
+#vi_mode_style: None
 
-  # Cursor blinking interval in milliseconds.
-  #blink_interval: 750
+# Cursor blinking interval in milliseconds.
+#blink_interval: 750
 
-  # If this is `true`, the cursor will be rendered as a hollow box when the
-  # window is not focused.
-  #unfocused_hollow: true
+# If this is `true`, the cursor will be rendered as a hollow box when the
+# window is not focused.
+#unfocused_hollow: true
 
-  # Thickness of the cursor relative to the cell width as floating point number
-  # from `0.0` to `1.0`.
-  #thickness: 0.15
+# Thickness of the cursor relative to the cell width as floating point number
+# from `0.0` to `1.0`.
+#thickness: 0.15
 
 # Live config reload (changes require restart)
 #live_config_reload: true
@@ -334,39 +334,39 @@ background_opacity: 1.0
 #alt_send_esc: true
 
 #mouse:
-  # Click settings
-  #
-  # The `double_click` and `triple_click` settings control the time
-  # alacritty should wait for accepting multiple clicks as one double
-  # or triple click.
-  #double_click: { threshold: 300 }
-  #triple_click: { threshold: 300 }
+# Click settings
+#
+# The `double_click` and `triple_click` settings control the time
+# alacritty should wait for accepting multiple clicks as one double
+# or triple click.
+#double_click: { threshold: 300 }
+#triple_click: { threshold: 300 }
 
-  # If this is `true`, the cursor is temporarily hidden when typing.
-  #hide_when_typing: false
+# If this is `true`, the cursor is temporarily hidden when typing.
+#hide_when_typing: false
 
-  #url:
-    # URL launcher
-    #
-    # This program is executed when clicking on a text which is recognized as a
-    # URL. The URL is always added to the command as the last parameter.
-    #
-    # When set to `launcher: None`, URL launching will be disabled completely.
-    #
-    # Default:
-    #   - (macOS) open
-    #   - (Linux/BSD) xdg-open
-    #   - (Windows) explorer
-    #launcher:
-    #  program: xdg-open
-    #  args: []
+#url:
+# URL launcher
+#
+# This program is executed when clicking on a text which is recognized as a
+# URL. The URL is always added to the command as the last parameter.
+#
+# When set to `launcher: None`, URL launching will be disabled completely.
+#
+# Default:
+#   - (macOS) open
+#   - (Linux/BSD) xdg-open
+#   - (Windows) explorer
+#launcher:
+#  program: xdg-open
+#  args: []
 
-    # URL modifiers
-    #
-    # These are the modifiers that need to be held down for opening URLs when
-    # clicking on them. The available modifiers are documented in the key
-    # binding section.
-    #modifiers: None
+# URL modifiers
+#
+# These are the modifiers that need to be held down for opening URLs when
+# clicking on them. The available modifiers are documented in the key
+# binding section.
+#modifiers: None
 
 # Mouse bindings
 #
@@ -599,20 +599,20 @@ background_opacity: 1.0
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
-  - { key: V,         mods: Control|Shift, action: Paste                       }
-  - { key: C,         mods: Control|Shift, action: Copy                        }
-  - { key: Insert,    mods: Shift,         action: PasteSelection              }
-  - { key: Equals,    mods: Control,       action: ResetFontSize               }
-  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
-  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
-  - { key: F11,       mods: None,          action: ToggleFullscreen            }
-  - { key: Paste,     mods: None,          action: Paste                       }
-  - { key: Copy,      mods: None,          action: Copy                        }
-  - { key: L,         mods: Control,       action: ClearLogNotice              }
-  - { key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }
-  - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
-  - { key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }
-  - { key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: Insert, mods: Shift, action: PasteSelection }
+  - { key: Equals, mods: Control, action: ResetFontSize }
+  - { key: Plus, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+  - { key: F11, mods: None, action: ToggleFullscreen }
+  - { key: Paste, mods: None, action: Paste }
+  - { key: Copy, mods: None, action: Copy }
+  - { key: L, mods: Control, action: ClearLogNotice }
+  - { key: PageUp, mods: None, action: ScrollPageUp, mode: ~Alt }
+  - { key: PageDown, mods: None, action: ScrollPageDown, mode: ~Alt }
+  - { key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt }
+  - { key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt }
 
   # Vi Mode
   #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }
@@ -713,24 +713,23 @@ key_bindings:
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward    }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward   }
-
 #debug:
-  # Display the time it takes to redraw each frame.
-  #render_timer: false
+# Display the time it takes to redraw each frame.
+#render_timer: false
 
-  # Keep the log file after quitting Alacritty.
-  #persistent_logging: false
+# Keep the log file after quitting Alacritty.
+#persistent_logging: false
 
-  # Log level
-  #
-  # Values for `log_level`:
-  #   - Off
-  #   - Error
-  #   - Warn
-  #   - Info
-  #   - Debug
-  #   - Trace
-  #log_level: Warn
+# Log level
+#
+# Values for `log_level`:
+#   - Off
+#   - Error
+#   - Warn
+#   - Info
+#   - Debug
+#   - Trace
+#log_level: Warn
 
-  # Print all received window events.
-  #print_events: false
+# Print all received window events.
+#print_events: false
