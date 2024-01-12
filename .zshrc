@@ -25,7 +25,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-
 # pnpm
 export PNPM_HOME="/home/roni/.local/share/pnpm"
 case ":$PATH:" in
