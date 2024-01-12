@@ -12,6 +12,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+
 plugins=(
     git
     gpg-agent
