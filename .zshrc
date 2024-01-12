@@ -15,6 +15,7 @@ compinit
 plugins=(
     git
     gpg-agent
+    zsh-autosuggestions
 )
 
 eval $(keychain --eval --quiet id_ed25519)
@@ -24,4 +25,12 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+
+# pnpm
+export PNPM_HOME="/home/roni/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 eval "$(starship init zsh)"
