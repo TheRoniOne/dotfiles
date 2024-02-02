@@ -14,7 +14,7 @@ bold_italic = { family = "FiraCode Nerd Font", style = "Bold Italic" }
 draw_bold_text_with_bright_colors = true
 
 [shell]
-program = "/bin/zsh"
+program = "/usr/bin/zsh"
 
 [keyboard]
 bindings = [{ key = "N", mods = "Control|Shift", action = "CreateNewWindow" }]
