@@ -106,11 +106,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 eval $(keychain --eval --quiet id_ed25519)
-neofetch
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+fastfetch
 
 # pnpm
 export PNPM_HOME="/home/roni/.local/share/pnpm"
