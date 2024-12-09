@@ -16,5 +16,20 @@
     "light": "One Light",
     "dark": "Andromeda"
   },
-  "autosave": "on_focus_change"
+  "autosave": "on_focus_change",
+  "lsp": {
+    "gopls": {
+      "gofumpt": true,
+      "initialization_options": {
+        "gofumpt": true
+      }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "checkOnSave": {
+          "command": "clippy"
+        }
+      }
+    }
+  }
 }
