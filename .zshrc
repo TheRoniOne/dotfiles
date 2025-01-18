@@ -136,3 +136,4 @@ if [ -f '/home/roni/google-cloud-sdk/path.zsh.inc' ]; then . '/home/roni/google-
 if [ -f '/home/roni/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/roni/google-cloud-sdk/completion.zsh.inc'; fi
 
 [[ -s "/home/roni/.gvm/scripts/gvm" ]] && source "/home/roni/.gvm/scripts/gvm"
+. "/home/roni/.deno/env"
