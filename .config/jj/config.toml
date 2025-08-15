@@ -7,3 +7,4 @@ email = "ronidani99@gmail.com"
 [ui]
 paginate = "never"
 default-command = "log"
+editor = "hx"
