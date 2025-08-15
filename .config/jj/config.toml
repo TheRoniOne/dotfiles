@@ -3,3 +3,7 @@
 [user]
 name = "TheRoniOne"
 email = "ronidani99@gmail.com"
+
+[ui]
+paginate = "never"
+default-command = "log"
