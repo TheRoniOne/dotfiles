@@ -14,7 +14,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Andromeda"
+    "dark": "Catppuccin Mocha"
   },
   "autosave": "on_focus_change",
   "lsp": {
