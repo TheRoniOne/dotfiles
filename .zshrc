@@ -118,16 +118,8 @@ esac
 
 export PATH=$PATH:/usr/local/go/bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.turso
 
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-
-# >>> juliaup initialize >>>
-
-# !! Contents within this block are managed by juliaup !!
-
-path=('/home/roni/.juliaup/bin' $path)
-export PATH
-
-# <<< juliaup initialize <<<
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/roni/google-cloud-sdk/path.zsh.inc' ]; then . '/home/roni/google-cloud-sdk/path.zsh.inc'; fi
