@@ -118,6 +118,10 @@ esac
 
 export PATH=$PATH:/usr/local/go/bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.turso
 
+autoload -U compinit
+compinit
+source <(jj util completion zsh)
+
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
