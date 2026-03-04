@@ -133,3 +133,6 @@ if [ -f '/home/roni/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/roni/g
 
 [[ -s "/home/roni/.gvm/scripts/gvm" ]] && source "/home/roni/.gvm/scripts/gvm"
 . "/home/roni/.deno/env"
+
+# opencode
+export PATH=/home/roni/.opencode/bin:$PATH
