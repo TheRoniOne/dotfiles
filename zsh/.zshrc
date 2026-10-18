@@ -109,14 +109,14 @@ eval $(keychain --eval --quiet id_ed25519)
 fastfetch
 
 # pnpm
-export PNPM_HOME="/home/roni/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
-export PATH=$PATH:/usr/local/go/bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.turso
+export PATH=$PATH:$HOME/.cargo/bin
 
 autoload -U compinit
 compinit
@@ -125,14 +125,5 @@ source <(jj util completion zsh)
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/roni/google-cloud-sdk/path.zsh.inc' ]; then . '/home/roni/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/roni/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/roni/google-cloud-sdk/completion.zsh.inc'; fi
-
-[[ -s "/home/roni/.gvm/scripts/gvm" ]] && source "/home/roni/.gvm/scripts/gvm"
-. "/home/roni/.deno/env"
-
 # opencode
-export PATH=/home/roni/.opencode/bin:$PATH
+export PATH="$HOME/.opencode/bin:$PATH"

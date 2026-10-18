@@ -2,6 +2,8 @@ local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
 
+config.default_prog = { 'zsh' }
+
 config.initial_cols = 125
 config.initial_rows = 35
 
