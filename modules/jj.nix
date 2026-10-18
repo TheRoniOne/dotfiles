@@ -1,0 +1,17 @@
+{
+  flake.modules.homeManager.default.programs.jujutsu = {
+    enable = true;
+    settings = {
+      "$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json";
+      user = {
+        name = "TheRoniOne";
+        email = "ronidani99@gmail.com";
+      };
+      ui = {
+        paginate = "never";
+        default-command = "log";
+        editor = "hx";
+      };
+    };
+  };
+}

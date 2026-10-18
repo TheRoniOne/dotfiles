@@ -1,0 +1,16 @@
+{
+  flake.modules.homeManager.default.programs.opencode = {
+    enable = true;
+    settings.mcp = {
+      mcp-docs-softlab = {
+        type = "remote";
+        url = "https://mcp-doc.softlabperu.com/mcp";
+      };
+      doomsday-mcp-softlab = {
+        type = "remote";
+        url = "https://doomsday.softlabperu.com/mcp";
+        headers.X-Ident-Id = "838054341";
+      };
+    };
+  };
+}

@@ -1,74 +1,100 @@
-# Dotfiles
+# Home Manager
 
-Each top-level directory is a GNU Stow package. Files inside a package mirror
-their destination under your home directory. For example,
-`helix/.config/helix/config.toml` becomes `~/.config/helix/config.toml`.
+Standalone Nix Home Manager configuration for `Roni` on `x86_64-linux`, including
+openSUSE. Nix manages the applications, shell plugins, and configuration files.
+Dependencies are pinned in `flake.lock`.
 
-Install GNU Stow using your system package manager (`sudo zypper install stow`
-on openSUSE), then run these commands from this repository.
+## First switch
 
-Preview the packages you want:
+Install Nix with flakes enabled. The account and home directory are set in
+`modules/home.nix`; change them there when using another account. If you already
+use Home Manager, keep your existing `home.stateVersion`. For a new installation,
+leave it at `26.05` when updating inputs.
 
-```sh
-stow --simulate --verbose --no-folding --target="$HOME" git helix jj starship
-```
-
-Create the links by running the same command without `--simulate`:
-
-```sh
-stow --verbose --no-folding --target="$HOME" git helix jj starship
-```
-
-Always specify `--target="$HOME"`: this repository can live anywhere, including
-`~/Downloads/dotfiles`. `--no-folding` creates individual file links so apps can
-create other files in their configuration directories without adding them here.
-
-Available packages:
-
-| Package | Destination |
-| --- | --- |
-| `cargo` | `~/.cargo/config.toml` |
-| `git` | `~/.config/git/` |
-| `helix` | `~/.config/helix/` |
-| `herdr` | `~/.config/herdr/config.toml` |
-| `jj` | `~/.config/jj/` |
-| `opencode` | `~/.config/opencode/` |
-| `starship` | `~/.config/starship.toml` |
-| `wezterm` | `~/.wezterm.lua` |
-| `xkb` | `~/.config/xkb/` |
-| `zed` | `~/.config/zed/settings.json` |
-| `zsh` | `~/.zshrc` |
-
-To enable everything, preview first, then remove `--simulate`:
+If you previously used this repository with Stow, remove its links **before
+updating the checkout to this layout**, using the old checkout:
 
 ```sh
-stow --simulate --verbose --no-folding --target="$HOME" \
+stow --delete --verbose --target="$HOME" \
   cargo git helix herdr jj opencode starship wezterm xkb zed zsh
 ```
 
-If Stow reports a conflict, move the existing file to a backup outside the
-destination path and run the preview again. Stow will refuse to replace existing
-files. Avoid `--adopt` unless you intend to replace the repository's versions
-with your local files.
+If you have already updated, unlink any old Stow symlinks pointing into this
+repository before switching. Back up existing regular configuration files that
+Home Manager reports as conflicts; Home Manager refuses to overwrite them.
+The former `~/.wezterm.lua` must also be backed up or unlinked so WezTerm can read
+the new `~/.config/wezterm/wezterm.lua`.
 
-Remove a package's links (keeping the repository files):
-
-```sh
-stow --delete --verbose --target="$HOME" helix
-```
-
-After adding or moving files within a package, refresh its links:
+From this repository, add the new files to Git so Nix can see them, build a
+generation, and then activate it:
 
 ```sh
-stow --restow --verbose --no-folding --target="$HOME" helix
+git add -A
+nix run .#home-manager -- build --flake .#Roni
+nix run .#home-manager -- switch --flake .#Roni
 ```
 
-Keep this repository at the same location after linking; moving it breaks the
-relative symlinks. If you need to move it, unstow first, move it, then stow again.
+After the first switch, the installed command can apply changes. Add new files
+to Git before switching; modified tracked files are included automatically:
 
-Stow only manages links; it does not install apps, themes, plugins, or fonts.
-The Zsh config expects Oh My Zsh, its autosuggestions and syntax-highlighting
-plugins, and several command-line tools. Home directory paths use `$HOME`.
-Cargo selects Clang and the Wild
-linker. The XKB package provides layout files but does not select the keyboard
-layout for your desktop.
+```sh
+home-manager switch --flake .#Roni
+```
+
+Open a new terminal after switching. Home Manager manages the Zsh configuration;
+changing the account's login shell is a separate system setting. WezTerm and
+Herdr explicitly use the Nix-provided Zsh.
+
+## Dendritic layout
+
+This follows the [dendritic pattern](https://github.com/mightyiam/dendritic): every
+Nix file under `modules/` is a flake-parts module implementing one feature.
+`flake.nix` loads that tree with `import-tree`.
+
+Feature files contribute to `flake.modules.homeManager.default`, which merges
+their Home Manager settings. `modules/home.nix` uses that module to create
+`homeConfigurations.Roni`. Add a feature by adding another Nix file under
+`modules/` with the same shape; no import list needs updating:
+
+```nix
+{
+  flake.modules.homeManager.default = { pkgs, ... }: {
+    home.packages = [ pkgs.ripgrep ];
+  };
+}
+```
+
+| Module | Managed configuration |
+| --- | --- |
+| `cargo.nix` | Cargo, Rust tools, Clang, and the Wild linker |
+| `git.nix` | Git identity, Mergiraf driver, and global attributes |
+| `helix.nix` | Helix theme, cursors, and Rust Analyzer settings |
+| `herdr.nix` | Herdr settings and terminal shell |
+| `jj.nix` | Jujutsu identity and UI settings |
+| `opencode.nix` | OpenCode and its existing MCP connections |
+| `starship.nix` | Starship prompt and Zsh integration |
+| `wezterm.nix` | WezTerm window size and Zsh command |
+| `xkb/default.nix` | Graphite keyboard rules and symbols |
+| `zed.nix` | Zed settings, Catppuccin extension, and JetBrains Mono |
+| `zsh.nix` | Zsh, Oh My Zsh, plugins, Keychain, Fastfetch, pnpm, and Zoxide |
+
+Herdr's binary is installed separately; this repository only provides its
+configuration. Select the Graphite layout in your desktop or compositor after
+activation; the XKB module installs the files without changing desktop settings.
+Keychain continues to use your existing `~/.ssh/id_ed25519` key. The Git and
+Jujutsu email addresses retain their original, different values.
+
+## Updates and checks
+
+```sh
+nix flake update
+nix flake check
+home-manager switch --flake .#Roni
+```
+
+Review and commit `flake.lock` with dependency updates. `nix flake check` builds
+the Home Manager activation package; it does not activate it. For evaluation
+without building applications, use `nix flake check --no-build`.
+
+To roll back an activated configuration, run `home-manager generations`, then
+run the `activate` script in the desired generation's store path.
