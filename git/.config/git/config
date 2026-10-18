@@ -2,3 +2,6 @@
     name = mergiraf
     driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
 
+[user]
+	name = TheRoniOne
+	email = ronidani99@hotmail.com
