@@ -30,6 +30,7 @@ Available packages:
 | `cargo` | `~/.cargo/config.toml` |
 | `git` | `~/.config/git/` |
 | `helix` | `~/.config/helix/` |
+| `herdr` | `~/.config/herdr/config.toml` |
 | `jj` | `~/.config/jj/` |
 | `opencode` | `~/.config/opencode/` |
 | `starship` | `~/.config/starship.toml` |
@@ -42,7 +43,7 @@ To enable everything, preview first, then remove `--simulate`:
 
 ```sh
 stow --simulate --verbose --no-folding --target="$HOME" \
-  cargo git helix jj opencode starship wezterm xkb zed zsh
+  cargo git helix herdr jj opencode starship wezterm xkb zed zsh
 ```
 
 If Stow reports a conflict, move the existing file to a backup outside the
