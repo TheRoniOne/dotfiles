@@ -20,8 +20,9 @@ stow --delete --verbose --target="$HOME" \
 ```
 
 If you have already updated, unlink any old Stow symlinks pointing into this
-repository before switching. Back up existing regular configuration files that
-Home Manager reports as conflicts; Home Manager refuses to overwrite them.
+repository before switching. The first-switch command below uses `-b backup`
+to preserve conflicting files such as `~/.zshrc` as `~/.zshrc.backup`. If a backup
+already exists, Home Manager stops so you can move that backup aside.
 The former `~/.wezterm.lua` must also be backed up or unlinked so WezTerm can read
 the new `~/.config/wezterm/wezterm.lua`.
 
@@ -31,7 +32,7 @@ generation, and then activate it:
 ```sh
 git add -A
 nix run .#home-manager -- build --flake .#Roni
-nix run .#home-manager -- switch --flake .#Roni
+nix run .#home-manager -- switch -b backup --flake .#Roni
 ```
 
 After the first switch, the installed command can apply changes. Add new files
@@ -44,6 +45,10 @@ home-manager switch --flake .#Roni
 Open a new terminal after switching. Home Manager manages the Zsh configuration;
 changing the account's login shell is a separate system setting. WezTerm and
 Herdr explicitly use the Nix-provided Zsh.
+
+If activation prints a GPU setup warning, run its displayed
+`sudo .../non-nixos-gpu-setup` command once so Nix graphical applications can use
+the host GPU drivers.
 
 ## Dendritic layout
 
