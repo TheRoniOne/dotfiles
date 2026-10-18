@@ -13,12 +13,12 @@
         };
       };
 
+      # Cargo references Wild directly; its ld conflicts with Clang's in the profile.
       home.packages = with pkgs; [
         rustc
         rustfmt
         clippy
         clang
-        wild
       ];
     };
 }
